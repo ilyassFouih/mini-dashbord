@@ -1,1 +1,3 @@
-<p>books works!</p>
+<app-filter-books (filterChange)="onFilterTermChange($event)"></app-filter-books>
+
+<app-table-books [books]="filteredBooks"></app-table-books>

@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  app-filter-books,
+  app-table-books {
+    width: 90%;
+  }
+
+  app-filter-books {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,4 @@
+<mat-form-field appearance="fill">
+    <mat-label>Filter table</mat-label>
+    <input [ngModel]="filter" (ngModelChange)="onFilterChange($event)" matInput placeholder="Title" value="Sushi">
+</mat-form-field>

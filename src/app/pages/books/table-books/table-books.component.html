@@ -1,0 +1,49 @@
+<mat-progress-bar *ngIf="loading" color="primary" mode="indeterminate"></mat-progress-bar>
+
+<table mat-table matSort matPaginator (matSortChange)="sortChange($event)" [dataSource]="dataSource"
+    class="mat-elevation-z8">
+
+    <!-- cover -->
+    <ng-container matColumnDef="cover">
+        <th mat-header-cell *matHeaderCellDef> Cover </th>
+        <td mat-cell *matCellDef="let element">
+            <img width="70px" [src]="element.attributes.display_properties.image">
+        </td>
+    </ng-container>
+
+    <!-- title -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title:</th>
+        <td mat-cell *matCellDef="let element">
+            <h2> {{element.attributes.content}} </h2>
+            ({{element.attributes.display_properties.type}})
+
+        </td>
+    </ng-container>
+
+    <!-- created at -->
+    <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by created at"> Created at
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.attributes.created_at | date :'dd/MM/yyy hh:mm'}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr *matNoDataRow>
+        <td class="empty-row" [attr.colspan]="displayedColumns.length">
+            <ng-container *ngIf="loading;else noBookFoundTpl">Loading books...</ng-container>
+            <ng-template #noBookFoundTpl> No book found with the filter query.</ng-template>
+        </td>
+    </tr>
+
+</table>
+
+<mat-paginator class="mat-elevation-z3" [pageSizeOptions]="[4, 8, 15]" showFirstLastButtons
+    aria-label="Select page of periodic elements">
+</mat-paginator>
+
+<ng-template #loadingTpl>
+
+</ng-template>
