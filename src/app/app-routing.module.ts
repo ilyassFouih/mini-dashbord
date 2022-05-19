@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './core/components/error/error.component';
 import { FullLayoutComponent } from './layouts/full-layout/full-layout.component';
 import { NavLayoutComponent } from './layouts/nav-layout/nav-layout.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 const routes: Routes = [
   {
