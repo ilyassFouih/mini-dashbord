@@ -26,7 +26,7 @@ export class TableBooksComponent implements OnChanges {
 
   dataSource = new MatTableDataSource<IBook>();
 
-  displayedColumns: string[] = ['cover', 'title', 'createdAt'];
+  displayedColumns: string[] = ['cover', 'title', 'createdAt', 'actions'];
 
   get loading() {
     return !this.books;

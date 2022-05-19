@@ -4,7 +4,7 @@ import { BookDetailComponent } from './book-detail.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: BookDetailComponent,
   },
 ];

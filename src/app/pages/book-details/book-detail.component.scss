@@ -1,0 +1,27 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mat-card {
+    text-align: center;
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+    mat-card-title {
+      margin-top: 1rem;
+    }
+
+    mat-card-content > ul {
+      text-align: left;
+    }
+
+    mat-card-actions,
+    mat-card-content {
+      padding: 1rem;
+    }
+  }
+}

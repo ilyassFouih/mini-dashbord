@@ -1,1 +1,19 @@
-<p>book-detail works!</p>
+<mat-card *ngIf="!loading" class="mat-elevation-z4">
+
+    <img [src]="book?.attributes?.display_properties?.image">
+    <mat-card-title>
+        {{book?.attributes?.content}}
+    </mat-card-title>
+    <mat-card-content>
+        <ul>
+            <li>Type: {{book?.attributes?.display_properties?.type}}</li>
+            <li>Created date: {{book?.attributes?.created_at | date : 'dd/MM/yyy'}}</li>
+            <li>Created date: {{book?.attributes?.updated_at | date : 'dd/MM/yyy'}}</li>
+        </ul>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button [href]="book?.relationships?.authors?.links?.related" target="_blank"> Author </a>
+        <a mat-button [href]="book?.relationships?.publishers?.links?.related" target="_blank"> Publisher </a>
+
+    </mat-card-actions>
+</mat-card>
