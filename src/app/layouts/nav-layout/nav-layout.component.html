@@ -1,8 +1,8 @@
 <div class="container">
     <app-top-bar></app-top-bar>
 
-    <div class="content">
-        <router-outlet></router-outlet>
+    <div class="content" [@routeAnimation]="getId(outletTpl)">
+        <router-outlet #outletTpl="outlet"></router-outlet>
     </div>
 
     <app-footer></app-footer>

@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: '',
     component: FullLayoutComponent,
+    data: { id: 1 },
     children: [
       {
         path: 'landing',
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'dash',
     component: NavLayoutComponent,
+    data: { id: 2 },
     children: [
       {
         path: '',
@@ -34,6 +36,7 @@ const routes: Routes = [
         path: 'books',
         loadChildren: () =>
           import('./pages/books/books.module').then((m) => m.BooksModule),
+        data: { id: 3 },
       },
       {
         path: 'details',
@@ -41,6 +44,7 @@ const routes: Routes = [
           import('./pages/book-details/book-details.module').then(
             (m) => m.BookDetailsModule
           ),
+        data: { id: 4 },
       },
     ],
   },
